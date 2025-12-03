@@ -1,0 +1,28 @@
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+import numpy as np
+
+df = dataset.select_dtypes(include=[np.number]) # Keep only numeric columns
+
+#heatmap
+plt.figure(figsize=(14, 10))
+ax = sns.heatmap(
+    df.corr(),
+    annot=True,
+    fmt=".2f",
+    cmap="coolwarm",
+    center=0,
+    square=True,
+    linewidths=0.7,
+    cbar_kws={"shrink": 0.8},
+    annot_kws={"size": 12, "weight": "bold"}
+)
+
+#labels
+plt.xticks(rotation=45, ha="right", fontsize=11)
+plt.yticks(rotation=0, fontsize=11)
+#title
+plt.title("Correlation Matrix", fontsize=18, pad=20)
+plt.tight_layout()   # prevents cutting off labels
+plt.show()
