@@ -1,0 +1,193 @@
+import os
+from pathlib import Path
+import pandas as pd
+
+
+folder = Path(r"C:\Path")
+desktop = Path.home() / "Desktop"
+output = desktop / "WASDE_Compiled.xlsx"
+
+# Main
+print("WASDE Compiler – reading .xls and .xlsx from C:\\WASDE Reports\n") 
+
+files = list(folder.glob("*.xls")) + list(folder.glob("*.xlsx"))
+if not files:
+    print("No files found!")
+    input(); exit()
+
+data = []
+
+for file in sorted(files):
+    if file.name.startswith("~$"):
+        continue
+    print(f"→ {file.name}")
+    try:
+        # Read Page 8 
+        df = pd.read_excel(file, sheet_name="Page 8", header=None)
+        
+        o1us_raw = df.iloc[43, 3]   
+        o2us_raw  = df.iloc[44, 3]   
+        o3us_raw  = df.iloc[46, 3]   
+        o4us_raw  = df.iloc[47, 3] #D   
+        
+        ts1us_raw = df.iloc[43, 4] #E 
+        ts2us_raw  = df.iloc[44, 4]   
+        ts3us_raw  = df.iloc[46, 4]   
+        ts4us_raw  = df.iloc[47, 4]   
+        
+        t1us_raw = df.iloc[43, 5] #F  
+        t2us_raw  = df.iloc[44, 5]   
+        t3us_raw  = df.iloc[46, 5]   
+        t4us_raw  = df.iloc[47, 5]   
+
+        tu1us_raw = df.iloc[43, 6] #G  
+        tu2us_raw  = df.iloc[44, 6]   
+        tu3us_raw  = df.iloc[46, 6]   
+        tu4us_raw  = df.iloc[47, 6]   
+
+        es1us_raw = df.iloc[43, 7]    # H44
+        es2us_raw  = df.iloc[44, 7]   # H45
+        es3us_raw  = df.iloc[46, 7]   # H47
+        es4us_raw  = df.iloc[47, 7]   # H48
+        
+        o1_raw = df.iloc[16, 3]   
+        o2_raw  = df.iloc[17, 3]   
+        o3_raw  = df.iloc[19, 3]   
+        o4_raw  = df.iloc[20, 3] #D   
+        
+        ts1_raw = df.iloc[16, 4] #E 
+        ts2_raw  = df.iloc[17, 4]   
+        ts3_raw  = df.iloc[19, 4]   
+        ts4_raw  = df.iloc[20, 4]   
+        
+        t1_raw = df.iloc[16, 5] #F  
+        t2_raw  = df.iloc[17, 5]   
+        t3_raw  = df.iloc[19, 5]   
+        t4_raw  = df.iloc[20, 5]   
+
+        tu1_raw = df.iloc[16, 6] #G  
+        tu2_raw  = df.iloc[17, 6]   
+        tu3_raw  = df.iloc[19, 6]   
+        tu4_raw  = df.iloc[20, 6]   
+
+        es1_raw = df.iloc[16, 7]    # H17
+        es2_raw  = df.iloc[17, 7]   # H18
+        es3_raw  = df.iloc[19, 7]   # H20
+        es4_raw  = df.iloc[20, 7]   # H21
+	
+
+        # Clean and convert to number
+        
+        o1us = pd.to_numeric(str(o1us_raw).replace(",", "").strip(), errors="coerce")
+        o2us  = pd.to_numeric(str(o2us_raw).replace(",", "").strip(), errors="coerce")
+        o3us  = pd.to_numeric(str(o3us_raw).replace(",", "").strip(), errors="coerce")
+        o4us  = pd.to_numeric(str(o4us_raw).replace(",", "").strip(), errors="coerce")
+        
+        ts1us = pd.to_numeric(str(ts1us_raw).replace(",", "").strip(), errors="coerce")
+        ts2us  = pd.to_numeric(str(ts2us_raw).replace(",", "").strip(), errors="coerce")
+        ts3us  = pd.to_numeric(str(ts3us_raw).replace(",", "").strip(), errors="coerce")
+        ts4us  = pd.to_numeric(str(ts4us_raw).replace(",", "").strip(), errors="coerce")
+        
+        t1us = pd.to_numeric(str(t1us_raw).replace(",", "").strip(), errors="coerce")
+        t2us  = pd.to_numeric(str(t2us_raw).replace(",", "").strip(), errors="coerce")
+        t3us  = pd.to_numeric(str(t3us_raw).replace(",", "").strip(), errors="coerce")
+        t4us  = pd.to_numeric(str(t4us_raw).replace(",", "").strip(), errors="coerce")
+        
+        tu1us = pd.to_numeric(str(tu1us_raw).replace(",", "").strip(), errors="coerce")
+        tu2us  = pd.to_numeric(str(tu2us_raw).replace(",", "").strip(), errors="coerce")
+        tu3us  = pd.to_numeric(str(tu3us_raw).replace(",", "").strip(), errors="coerce")
+        tu4us  = pd.to_numeric(str(tu4us_raw).replace(",", "").strip(), errors="coerce")
+
+        es1us = pd.to_numeric(str(es1us_raw).replace(",", "").strip(), errors="coerce")
+        es2us  = pd.to_numeric(str(es2us_raw).replace(",", "").strip(), errors="coerce")
+        es3us  = pd.to_numeric(str(es3us_raw).replace(",", "").strip(), errors="coerce")
+        es4us  = pd.to_numeric(str(es4us_raw).replace(",", "").strip(), errors="coerce")
+
+        o1 = pd.to_numeric(str(o1_raw).replace(",", "").strip(), errors="coerce")
+        o2  = pd.to_numeric(str(o2_raw).replace(",", "").strip(), errors="coerce")
+        o3  = pd.to_numeric(str(o3_raw).replace(",", "").strip(), errors="coerce")
+        o4  = pd.to_numeric(str(o4_raw).replace(",", "").strip(), errors="coerce")
+        
+        ts1 = pd.to_numeric(str(ts1_raw).replace(",", "").strip(), errors="coerce")
+        ts2  = pd.to_numeric(str(ts2_raw).replace(",", "").strip(), errors="coerce")
+        ts3  = pd.to_numeric(str(ts3_raw).replace(",", "").strip(), errors="coerce")
+        ts4  = pd.to_numeric(str(ts4_raw).replace(",", "").strip(), errors="coerce")
+        
+        t1 = pd.to_numeric(str(t1_raw).replace(",", "").strip(), errors="coerce")
+        t2  = pd.to_numeric(str(t2_raw).replace(",", "").strip(), errors="coerce")
+        t3  = pd.to_numeric(str(t3_raw).replace(",", "").strip(), errors="coerce")
+        t4  = pd.to_numeric(str(t4_raw).replace(",", "").strip(), errors="coerce")
+        
+        tu1 = pd.to_numeric(str(tu1_raw).replace(",", "").strip(), errors="coerce")
+        tu2  = pd.to_numeric(str(tu2_raw).replace(",", "").strip(), errors="coerce")
+        tu3  = pd.to_numeric(str(tu3_raw).replace(",", "").strip(), errors="coerce")
+        tu4  = pd.to_numeric(str(tu4_raw).replace(",", "").strip(), errors="coerce")
+
+        es1 = pd.to_numeric(str(es1_raw).replace(",", "").strip(), errors="coerce")
+        es2  = pd.to_numeric(str(es2_raw).replace(",", "").strip(), errors="coerce")
+        es3  = pd.to_numeric(str(es3_raw).replace(",", "").strip(), errors="coerce")
+        es4  = pd.to_numeric(str(es4_raw).replace(",", "").strip(), errors="coerce")
+
+
+        print(f"   H17 (es1) → {es1}")
+        print(f"   H18 (es2) → {es2}")
+        print(f"   H20 (es3) → {es3}")
+        print(f"   H21 (es4) → {es4}")
+        
+        data.append({
+            "Source File": file.name,
+            "Report Date": pd.to_datetime(file.stem[-4:] + "11", format="%m%y%d"),
+            "US Output": o1us,
+            "US Est Output": o2us,
+            "US Future Output month b4": o3us,
+            "US Future Output": o4us,
+            "US Total Supply": ts1us,
+            "US Est Total Supplys": ts2us,
+            "US Future Total Supply month b4": ts3us,
+            "US Future Total Supply": ts4us,
+            "US Trade": t1us,
+            "US Est Trade": t2us,
+            "US Future Trade month b4": t3us,
+            "US Future Trade": t4us,
+            "US Total Use": tu1us,
+            "US Est Total Use": tu2us,
+            "US Future Total Use month b4": tu3us,
+            "US Future Total Use": tu4us,
+            "US Ending Stocks": es1us,
+            "US Est Ending Stocks": es2us,
+            "US Future Ending Stocks month b4": es3us,
+            "US Future Ending Stocks": es4us,
+            "W Output": o1,
+            "W Est Output": o2,
+            "W Future Output month b4": o3,
+            "W Future Output": o4,
+            "W Total Supply": ts1,
+            "W Est Total Supplys": ts2,
+            "W Future Total Supply month b4": ts3,
+            "W Future Total Supply": ts4,
+            "W Trade": t1,
+            "W Est Trade": t2,
+            "W Future Trade month b4": t3,
+            "W Future Trade": t4,
+            "W Total Use": tu1,
+            "W Est Total Use": tu2,
+            "W Future Total Use month b4": tu3,
+            "W Future Total Use": tu4,
+            "W Ending Stocks": es1,
+            "W Est Ending Stocks": es2,
+            "W Future Ending Stocks month b4": es3,
+            "W Future Ending Stocks": es4
+
+        })
+
+    except Exception as e:
+        print(f"   Failed: {e}")
+
+# Save result
+result = pd.DataFrame(data)
+result.to_excel(output, index=False)
+
+print("\nSUCCESS! Compiled file created on Desktop:")
+print(output)
+os.startfile(desktop)
+input("\nPress Enter to close...")
