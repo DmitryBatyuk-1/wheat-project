@@ -32,6 +32,12 @@ We will be using z-scores with a rolling average with a look-back window of five
 First, we aggregate WASDE reports into one ( 2. [Aggregation Script](https://github.com/DmitryBatyuk-1/wheat/blob/468b8d3e687c7765afc288261ac0b195a3307974/2.%20Aggregation%20Script%20PY)); Here are the links to sample data before: [wasde09.24.xls](https://github.com/DmitryBatyuk-1/wheat/blob/468b8d3e687c7765afc288261ac0b195a3307974/wasde0924.xls) [wasde10.24.xls](https://github.com/DmitryBatyuk-1/wheat/blob/68782046b00d1c10d404c1dd73ab1747a05162f5/wasde1024.xls) and after: [WASDE_Compiled.xlsx](https://github.com/DmitryBatyuk-1/wheat/blob/68782046b00d1c10d404c1dd73ab1747a05162f5/WASDE_Compiled.xlsx)  Since our data has different granularity and was collected on different days of the week, we need to prepare the data for Python and R so that the regression scripts run properly.
 
 We create a calendar table and merge a copy of it with each weekly fact table. As an output, we get a daily fact table that has some null values, which we fill down to complete the data. (3. Weekly to Daily transformation) Now we have data that is ready to be linked. We use a star schema to link our calendar with multiple fact tables. The only thing that unites them is the date. 
+<img width="801" height="698" alt="3  Weekly to Daily transformation" src="https://github.com/user-attachments/assets/8ea37595-6114-44f0-ae0e-c43880d657aa" />
+
+## Star Schema
+
+<img width="1022" height="617" alt="Schema" src="https://github.com/user-attachments/assets/98cc6d15-435f-4450-88bc-4010e5ab9292" />
+
 
 # Variable preparation
 We have already measured correlations of raw variables with the Net Commercial position. One of the problems of using raw data is the potential non-stationarity of the time series. We will transform variables of interest into z-scores that will be calculated taking a five-year rolling average. After the transformation, the relationship still exists. We will proceed with our analysis. (1.4 correlation summary z-score) 
