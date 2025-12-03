@@ -20,12 +20,12 @@ Our **goal is to model factors that influence commercials' net positioning in fu
 
 <img width="1078" height="605" alt="1 3 Month Decomposition" src="https://github.com/user-attachments/assets/9f6dfab8-6a08-4bad-8f88-6d687b8417e5" />
 
-We will be using z-scores with a rolling average with a look-back window of five years. This will allow us to directly compare deviations from averages rather than raw values. Before we proceed with transformations, we will take a quick glance at correlation tables that will give us a hint of potential relationships.(1.4 https://github.com/DmitryBatyuk-1/wheat/blob/6941a4c39a13df2a64e8b8e5d4b76055adbc305a/1.4%20Correlation%20PY) 
+We will be using z-scores with a rolling average with a look-back window of five years. This will allow us to directly compare deviations from averages rather than raw values. Before we proceed with transformations, we will take a quick glance at correlation tables that will give us a hint of potential relationships.(1. [Correlation](https://github.com/DmitryBatyuk-1/wheat/blob/468b8d3e687c7765afc288261ac0b195a3307974/1.4%20Correlation%20PY) ) 
 
 
 
 # Data Preparation and structure
-First, we aggregate WASDE reports into one (PY 2.Aggregation Script); the rest of the data came aggregated from the download source. Since our data has different granularity and was collected on different days of the week, we need to prepare the data for Python and R so that the regression scripts run properly. 
+First, we aggregate WASDE reports into one ( 2. [Aggregation Script](https://github.com/DmitryBatyuk-1/wheat/blob/468b8d3e687c7765afc288261ac0b195a3307974/2.%20Aggregation%20Script%20PY)); Here are the links two sample data before: [wasde09.24.xls](https://github.com/DmitryBatyuk-1/wheat/blob/468b8d3e687c7765afc288261ac0b195a3307974/wasde0924.xls) Since our data has different granularity and was collected on different days of the week, we need to prepare the data for Python and R so that the regression scripts run properly.
 
 We create a calendar table and merge a copy of it with each weekly fact table. As an output, we get a daily fact table that has some null values, which we fill down to complete the data. (3. Weekly to Daily transformation) Now we have data that is ready to be linked. We use a star schema to link our calendar with multiple fact tables. The only thing that unites them is the date. 
 
