@@ -6,7 +6,7 @@ In this project, I will demonstrate data preparation and aggregation methods, to
 - Commitments of Traders Reports https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm
 - US Export Sales https://apps.fas.usda.gov/export-sales/?ref=ag.hedder.com
 - Weather data https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/cdus/degree_days/
--pbix link  
+
   
 
 
@@ -52,7 +52,8 @@ We will run OLS, including the Newey-West estimator with five lags, so our stand
 
 The model will fit our values, and the residuals that deviate more than one sigma (adjustable threshold) will indicate unusually high or low positioning, which will serve as a potential indicator that the Net Commercial position is about to reach its peak.Our standard errors are most likely overly “optimistic” due to potential autocorrelation; however, R-squared and coefficients are still meaningful. 
 <img width="1060" height="555" alt="4  Residuals" src="https://github.com/user-attachments/assets/f02bc6dd-f787-45bd-939d-8dc52fa6f3ad" />
-<img width="1060" height="572" alt="4  Signal" src="https://github.com/user-attachments/assets/e34810fa-b2e5-4168-8af8-a170718b9f7f" />
+<img width="1060" height="572" alt="4  Signal" src="https://github.com/user-attachments/assets/caa496ba-c031-4edb-83f1-fde0345c1ded" />
+
 
 
 # Results
