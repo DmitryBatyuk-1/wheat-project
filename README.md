@@ -20,7 +20,7 @@ Our **goal is to model factors that influence commercials' net positioning in fu
 
 <img width="1078" height="605" alt="1 3 Month Decomposition" src="https://github.com/user-attachments/assets/9f6dfab8-6a08-4bad-8f88-6d687b8417e5" />
 
-We will be using z-scores with a rolling average with a look-back window of five years. This will allow us to directly compare deviations from averages rather than raw values. Before we proceed with transformations, we will take a quick glance at correlation tables that will give us a hint of potential relationships.(1. [Correlation](https://github.com/DmitryBatyuk-1/wheat/blob/468b8d3e687c7765afc288261ac0b195a3307974/1.4%20Correlation%20PY) ) 
+Our data exhibits significant month-to-month seasonality. A more meaningful comparison involves examining the positioning of Net commercials in the same month across previous years. To conduct this analysis, we will employ z-scores calculated using a rolling average with a five-year look-back window. This will allow us to directly compare deviations from averages rather than raw values. Before we proceed with transformations, we will take a quick glance at correlation tables that will give us a hint of potential relationships.(1. [Correlation](https://github.com/DmitryBatyuk-1/wheat/blob/468b8d3e687c7765afc288261ac0b195a3307974/1.4%20Correlation%20PY) ) 
 
 <img width="969" height="545" alt="1 4 correlation" src="https://github.com/user-attachments/assets/d95a3476-bcff-4a3b-85b6-91a02342d8d7" />
 <img width="755" height="623" alt="1 4 correlation WASDE US" src="https://github.com/user-attachments/assets/658228aa-7e58-4256-8377-15a9b5da6c13" />
