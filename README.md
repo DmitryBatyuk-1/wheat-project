@@ -57,4 +57,4 @@ The model will fit our values, and the residuals that deviate more than one sigm
 
 
 # Results
-If we plot our residuals, we can see points in time where the positioning was very extreme. The bigger the deviation, the stronger the signal.
+If we look at the Wheat Commercials Signal graph, we can see the residuals plotted against time. On the graph, we can see points in time where the combination of deviations in our significant factors was very extreme (more than 2 sigmas). These points represent our trading opportunities (mean reversion strategy). The greater the deviation, the stronger the signal.
