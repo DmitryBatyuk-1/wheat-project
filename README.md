@@ -48,6 +48,7 @@ After the transformation, the relationship still exists. We will proceed with ou
 
 # Modeling
 We will run OLS, including the Newey-West estimator with five lags, so our standard errors are more reliable.(4. [Model](https://github.com/DmitryBatyuk-1/wheat/blob/589a5f6645c34dda07af8f169c29fae473510a94/4.%20Model%20R)) 
+
 <img width="696" height="381" alt="4  OLS" src="https://github.com/user-attachments/assets/4a77a8b3-c991-428b-95f0-a208cdbf7355" />
 
 We can see that factors such as Crude Oil Spreads, the Trade Weighted US Dollar Index, Ending Stocks, and Heating Degree Days significantly influence the Commercial Net Position. Factors such as Accumulated Exports can be dropped from the model. By collecting and updating data on significant factors we can generate a weekly signal for trade execution. The model will fit our data, and residuals that deviate by more than one sigma (an adjustable threshold) will indicate unusually high or low positioning, which will serve as a potential indicator that the Net Commercial Position is about to reach its peak. Our standard errors are most likely overly "optimistic" due to potential autocorrelation; however, the R-squared value and coefficients are still meaningful.
