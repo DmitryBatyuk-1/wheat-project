@@ -50,11 +50,11 @@ After the transformation, the relationship still exists. We will proceed with ou
 We will run OLS, including the Newey-West estimator with five lags, so our standard errors are more reliable.(4. [Model](https://github.com/DmitryBatyuk-1/wheat/blob/589a5f6645c34dda07af8f169c29fae473510a94/4.%20Model%20R)) 
 <img width="696" height="381" alt="4  OLS" src="https://github.com/user-attachments/assets/4a77a8b3-c991-428b-95f0-a208cdbf7355" />
 
-The model will fit our values, and the residuals that deviate more than one sigma (adjustable threshold) will indicate unusually high or low positioning, which will serve as a potential indicator that the Net Commercial position is about to reach its peak.Our standard errors are most likely overly “optimistic” due to potential autocorrelation; however, R-squared and coefficients are still meaningful. 
+We can see that factors such as Crude Oil Spreads, the Trade Weighted US Dollar Index, Ending Stocks, and Heating Degree Days significantly influence the Commercial Net Position. Factors such as Accumulated Exports can be dropped from the model. The model will fit our data, and residuals that deviate by more than one sigma (an adjustable threshold) will indicate unusually high or low positioning, which will serve as a potential indicator that the Net Commercial Position is about to reach its peak. Our standard errors are most likely overly "optimistic" due to potential autocorrelation; however, the R-squared value and coefficients are still meaningful.
 <img width="1060" height="555" alt="4  Residuals" src="https://github.com/user-attachments/assets/f02bc6dd-f787-45bd-939d-8dc52fa6f3ad" />
 <img width="1060" height="572" alt="4  Signal" src="https://github.com/user-attachments/assets/caa496ba-c031-4edb-83f1-fde0345c1ded" />
 
 
 
 # Results
-If we look at the Wheat Commercials Signal graph, we can see the residuals plotted against time. On the graph, we can see points in time where the combination of deviations in our significant factors was very extreme (more than 2 sigmas). These points represent our trading opportunities (mean reversion strategy). The greater the deviation, the stronger the signal.
+If we look at the Wheat Commercials Signal graph, we can see the residuals plotted against time. On the graph, we can see points in time where the deviation in our significant factors was very extreme (more than 1 sigma). These points represent our trading opportunities (mean reversion strategy). The greater the deviation, the stronger the signal.
