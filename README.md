@@ -1,18 +1,15 @@
 # Overview
 
 In this project, I will demonstrate data preparation and aggregation methods, together with data analysis, on the example of wheat futures data. I will use Power BI charts, as well as Python and R visuals, for a more in-depth analysis. [PowerBI Report Link](https://app.powerbi.com/reportEmbed?reportId=5e7c090c-2fc4-4bc7-be03-0c3bc24106c3&autoAuth=true&ctid=80f21a0b-c2f5-4593-a920-391b9cb2e666)
+
+# Goal & Data overview
+Our **goal is to model factors that influence commercials' net positioning in futures and options, so we can see how extreme the positioning is compared to previous years**. This will give us insights about future price movements. The data sets that we will use are Commitment of Traders Reports, WASDE reports, Export Sales reports, OHLC data, and Cooling/Heating Degree days. 
+
 ## Data was used from these sources: 
 - WASDE Reports https://esmis.nal.usda.gov/publication/world-agricultural-supply-and-demand-estimates#release-items
 - Commitments of Traders Reports https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm
 - US Export Sales https://apps.fas.usda.gov/export-sales/?ref=ag.hedder.com
 - Weather data https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/cdus/degree_days/
-
-  
-
-
-
-# Goal & Data overview
-Our **goal is to model factors that influence commercials' net positioning in futures and options, so we can see how extreme the positioning is compared to previous years**. This will give us insights about future price movements. The data sets that we will use are Commitment of Traders Reports, WASDE reports, Export Sales reports, OHLC data, and Cooling/Heating Degree days. 
 
 <img width="1384" height="635" alt="1 1 Positioning" src="https://github.com/user-attachments/assets/06234c1c-f89e-4ccd-852c-fa1189e81279" />
 
